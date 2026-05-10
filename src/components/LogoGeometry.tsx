@@ -81,22 +81,24 @@ export default function LogoGeometry() {
       {/* Partículas flotantes tipo campo cuántico */}
       <points ref={particles}>
         <bufferGeometry>
-          <bufferAttribute
-            attach="attributes-position"
-            count={particlesCount}
-            array={posArray}
-            itemSize={3}
-          />
+                          <bufferAttribute
+                                              attach="attributes-position"
+                                              count={particlesCount}
+                                              array={posArray}
+                                              itemSize={3}
+                                              args={[posArray, 3]}
+                                            />
         </bufferGeometry>
-        <pointsMaterial
-          color={0x00ffff}
-          size={0.02}
-          blending={THREE.AdditiveBlending}
-          depthWrite={false}
-          transparent
-          opacity={0.8}
-        />
-      </points>
+              <pointsMaterial
+                                size={0.015}
+                                color="#ffffff"
+                                transparent
+                                opacity={0.8}
+                                depthWrite={false}
+                                blending={THREE.AdditiveBlending}
+                              />
+        </points>
+  
     </group>
   );
 }
